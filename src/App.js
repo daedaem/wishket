@@ -1,4 +1,10 @@
+import Introduction from "./components/Introduction/Introduction";
+
 const App = () => {
-  return <></>;
+  return (
+    <>
+      <Introduction />
+    </>
+  );
 };
 export default App;
