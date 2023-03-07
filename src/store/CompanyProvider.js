@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CompanyContext from "./company-context";
 const CompanyProvider = (props) => {
   const [companyState, setCompanyState] = useState("");
@@ -13,7 +13,8 @@ const CompanyProvider = (props) => {
   };
   const jobsChangeHandler = (data) => {
     setCompanyState((prev) => (prev = data));
-  };
+    };
+    
   const companyContext = {
     companyDetail: companyState.companyDetail,
     companyService: companyState.companyService,

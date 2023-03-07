@@ -1,22 +1,30 @@
 import CompanyDetailStack from "./CompanyDetailStack";
 const CompanyDetail = ({ value }) => {
+  const datas = value.jobs.reduce((init, item, idx) => {
+    if (init != item) {
+      return (init = { ...init, item });
+      // return (init[item] = item);
+    }
+    return init;
+  }, {});
   return (
     <ul>
-      {value.company_stacks.map((item, idx) => {
+      {/* {value.jobs.map((item, idx) => {
         return <CompanyDetailStack key={idx} val={item} />;
-      })}
+      })} */}
       <div>
-        <img src={`${value.logo}`} />
-        <li>{value.name}</li>
+        {/* {value.jobs.job_images.map((el, idx) => {
+          return;
+        })} */}
+        {/* <li>{value.jobs.name}</li> */}
       </div>
-      <li>{value.headcount}</li>
-      {/* <li>{value.id}</li> */}
-      <li>{value.date_established}</li>
-      <li>{value.identify_number}</li>
+      {/* <li>{value.jobs.headcount}</li>
+      <li>{value.jobs.date_established}</li>
+      <li>{value.jobs.identify_number}</li>
       <li>
-        <link href={`${value.link}`} />
+        <link href={`${value.jobs.link}`} />
       </li>
-      <li>{value.sales}</li>
+      <li>{value.jobs.sales}</li> */}
     </ul>
   );
 };

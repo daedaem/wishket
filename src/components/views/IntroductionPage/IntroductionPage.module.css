@@ -1,0 +1,22 @@
+.totalFrame {
+  margin: auto;
+  background-color: #fff;
+  position: relative;
+  margin-top: 7rem;
+  padding: 0 10%;
+}
+.companyLogo {
+  height: 4rem;
+}
+.companyTitle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.companyName {
+  padding-left: 1rem;
+  /* margin-bottom: 0rem; */
+
+  font-size: 2rem;
+  font-weight: bold;
+}

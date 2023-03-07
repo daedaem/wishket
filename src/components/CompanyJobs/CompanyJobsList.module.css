@@ -1,0 +1,38 @@
+.jobsList {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  padding-bottom: 1rem;
+}
+.date_deadline {
+  font-size: 0.8rem;
+  text-align: end;
+  font-style: italic;
+  color: #616161;
+}
+.skillList {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  /* display: grid; */
+  /* gap: 0.5rem; */
+  /* grid-template-columns: repeat(4, 1fr); */
+  /* text-align: start; */
+  margin: 0rem auto;
+}
+.needSkill {
+  background-color: #2099bb;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.skill {
+  /* background-color: #2099bb; */
+  background-color: #a1a6ad;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}

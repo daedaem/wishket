@@ -1,0 +1,12 @@
+.card {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0rem auto;
+}
+.window {
+  background: coral;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+}
