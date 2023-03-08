@@ -93,13 +93,7 @@ const IntroductionPage = () => {
           </article>
         )}
       </section>
-      {/* {!isJobsLoading && (
-        <section>
-          {jobsData.map((item, idx) => {
-            return <CompanyDetail key={idx} value={item} />;
-          })}
-        </section>
-      )} */}
+      {!isJobsLoading && <CompanyDetail value={jobsData} />}
     </div>
   );
 };

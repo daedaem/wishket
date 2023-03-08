@@ -1,0 +1,55 @@
+.container {
+  width: 70%;
+  padding: 1rem 0;
+  /* margin: auto; */
+  position: relative;
+  overflow: hidden;
+}
+.containerFrame {
+  display: flex;
+  width: 100%;
+  /* object-fit: cover; */
+  /* align-items: stretch; */
+}
+.sliderContainer {
+  width: 100%;
+  display: flex;
+  object-fit: cover;
+  flex-shrink: 0;
+  /* border-radius: 10px; */
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.prevButton {
+  all: unset;
+  fill: #c6c5c5;
+  padding: 0rem 1rem;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transform: rotate(-180deg);
+}
+
+.rightButton {
+  all: unset;
+  fill: #c6c5c5;
+  padding: 0rem 1rem;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.prevButton:hover,
+.rightButton :hover {
+  fill: #fff;
+}

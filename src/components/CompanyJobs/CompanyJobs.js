@@ -19,12 +19,10 @@ const CompanyJobs = ({ value }) => {
           })}
       </div>
 
-      <div className={classes.window}>
-        {imageList &&
-          imageList.map((el, idx) => {
-            return <img key={idx} src={`${el.image}`} alt="" />;
-          })}
-      </div>
+      {/* {imageList &&
+        imageList.map((el, idx) => {
+          return <img key={idx} src={`${el.image}`} alt="" />;
+        })} */}
     </div>
   );
 };
