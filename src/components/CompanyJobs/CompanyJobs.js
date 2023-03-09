@@ -8,21 +8,16 @@ const CompanyJobs = ({ value }) => {
       if (el.job_images) return [...init, ...el.job_images];
       else return init;
     }, []);
-  // console.log(imageList);
+
   return (
-    <div>
-      <h4>채용 중 포지션</h4>
+    <div className={classes.jobsFrame}>
+      <h3>채용 포지션</h3>
       <div className={classes.card}>
         {value &&
           value.map((item, idx) => {
             return <CompanyJobsList key={idx} val={item} />;
           })}
       </div>
-
-      {/* {imageList &&
-        imageList.map((el, idx) => {
-          return <img key={idx} src={`${el.image}`} alt="" />;
-        })} */}
     </div>
   );
 };

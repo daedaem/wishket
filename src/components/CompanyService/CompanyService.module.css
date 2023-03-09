@@ -1,0 +1,13 @@
+.serviceDisc {
+  padding: 0rem 0rem 1rem 0rem;
+}
+.stackTag {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 0rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #e1dede;
+  color: black;
+  /* padding: 0.5rem 0.8rem; */
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+}

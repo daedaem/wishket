@@ -1,0 +1,48 @@
+.sideBar {
+  width: 40%;
+  /* position: fixed; */
+  position: relative;
+  right: 0;
+  top: 12rem;
+  max-height: 25rem;
+}
+.sideBarFrame {
+  border: 1px solid rgb(228, 228, 228);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 1.5rem 1.5rem;
+}
+.sideBarHead {
+  text-align: center;
+  /* display: flex; */
+  /* justify-content: start; */
+  /* align-items: center; */
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding: 1rem;
+}
+.sideBarHeadImage {
+  height: 5rem;
+  margin-right: 1rem;
+}
+.sideBarContent {
+  /* margin-top: 1rem; */
+  /* padding: 1rem; */
+  padding: 1rem 0rem 0rem 0.5rem;
+  /* margin: 0rem 0.5rem; */
+  /* display: flex; */
+  display: flex;
+  flex-wrap: wrap;
+}
+dt {
+  flex: 1 1 30%;
+  font-weight: bold;
+  margin: 1rem 0rem;
+  /* padding: 0rem 0rem; */
+  color: black;
+}
+dd {
+  flex: 1 1 60%;
+  margin: 1rem 0rem;
+  padding: 0rem 1rem;
+  color: black;
+}

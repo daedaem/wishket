@@ -1,20 +1,27 @@
+import classes from "./CompanyService.module.css";
 const CompanyService = (props) => {
   const description = props.value.description.split("\\n");
+  console.log(props);
   return (
-    <>
-      {/* 모달로 가져가자 */}
-      <h4>{props.value.name}</h4>
-      {/* <div>
+    <article className={classes.serviceDisc}>
+      <h4>
+        {"< "}
+        {props.value.name}
+        {" >"}
+      </h4>
+      <div>
         {description.map((el, idx) => {
-          return <div key={idx}>{el}</div>;
+          return <p key={idx}>{el}</p>;
         })}
       </div>
-      <div>
-        {props.value.service_stacks.map((el, idx) => {
-          return <span key={idx}>#{el.name} </span>;
-        })}
-      </div> */}
-    </>
+      {props.value.service_stacks.map((el, idx) => {
+        return (
+          <span key={idx} className={classes.stackTag}>
+            {el.name}
+          </span>
+        );
+      })}
+    </article>
   );
 };
 export default CompanyService;

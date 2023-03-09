@@ -5,9 +5,7 @@ const App = () => {
   return (
     <CompanyProvider>
       <Header />
-      <main>
-        <IntroductionPage />
-      </main>
+      <IntroductionPage />
     </CompanyProvider>
   );
 };

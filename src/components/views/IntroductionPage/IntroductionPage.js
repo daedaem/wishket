@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { AxiosInstance } from "../../../api/axios";
 import CompanyDetail from "../../CompanyDetail/CompanyDetail";
 import CompanyJobs from "../../CompanyJobs/CompanyJobs";
 import CompanyService from "../../CompanyService/CompanyService";
 import classes from "./IntroductionPage.module.css";
+import SideBar from "./../../UI/SideBar/SideBar";
 
 const IntroductionPage = () => {
   const [detailData, setDetailData] = useState([]);
@@ -18,49 +19,50 @@ const IntroductionPage = () => {
   const [serviceError, setServiceError] = useState(false);
   const [isServiceLoading, setIsServiceLoading] = useState(false);
 
-  const fetchData = {
-    detailFetchData: async (url) => {
-      setIsDetailLoading(true);
-      try {
-        const fetchedData = await AxiosInstance.get(url);
-        setDetailData((prev) => fetchedData.data);
-        setIsDetailLoading(false);
-      } catch (error) {
-        setDetailError(() => error);
-      }
+  const detailFetchData = useCallback(async (url) => {
+    setIsDetailLoading(true);
+    try {
+      const fetchedData = await AxiosInstance.get(url);
+      setDetailData(() => fetchedData.data);
       setIsDetailLoading(false);
-    },
-
-    jobsFetchData: async (url) => {
-      setIsJobsLoading(true);
-      try {
-        const fetchedData = await AxiosInstance.get(url);
-        setJobsData(() => fetchedData.data.jobs);
-        setIsJobsLoading(false);
-      } catch (error) {
-        setJobsError(() => error);
-      }
-      setIsJobsLoading(false);
-    },
-    serviceFetchData: async (url) => {
-      setIsServiceLoading(true);
-      try {
-        const fetchedData = await AxiosInstance.get(url);
-        setServiceData(() => fetchedData.data.services);
-        setIsServiceLoading(false);
-      } catch (error) {
-        setServiceError(() => error);
-      }
-      setIsServiceLoading(false);
-    },
-  };
-  useEffect(() => {
-    fetchData.detailFetchData("BCK_1/company-detail/1.0.0/companies/1");
-    fetchData.jobsFetchData("wishket/company-jobs/1.0.0/companies/1/jobs");
-    fetchData.serviceFetchData(
-      "wishket/company-services/1.0.0/companies/1/services"
-    );
+    } catch (error) {
+      setDetailError(() => error);
+    }
+    setIsDetailLoading(false);
   }, []);
+
+  const jobsFetchData = useCallback(async (url) => {
+    setIsJobsLoading(true);
+    try {
+      const fetchedData = await AxiosInstance.get(url);
+      setJobsData(() => fetchedData.data.jobs);
+      setIsJobsLoading(false);
+    } catch (error) {
+      setJobsError(() => error);
+    }
+    setIsJobsLoading(false);
+  }, []);
+  const serviceFetchData = useCallback(async (url) => {
+    setIsServiceLoading(true);
+    try {
+      const fetchedData = await AxiosInstance.get(url);
+      setServiceData(() => fetchedData.data.services);
+      setIsServiceLoading(false);
+    } catch (error) {
+      setServiceError(() => error);
+    }
+    setIsServiceLoading(false);
+  }, []);
+
+  useEffect(() => {
+    detailFetchData("BCK_1/company-detail/1.0.0/companies/1");
+  }, [detailFetchData]);
+  useEffect(() => {
+    jobsFetchData("wishket/company-jobs/1.0.0/companies/1/jobs");
+  }, [jobsFetchData]);
+  useEffect(() => {
+    serviceFetchData("wishket/company-services/1.0.0/companies/1/services");
+  }, [serviceFetchData]);
 
   // const comDetail = jobsData.reduce((init, item, idx) => {
   //   return item.jobs;
@@ -69,32 +71,34 @@ const IntroductionPage = () => {
   // console.log(1, comDetail);
   // console.log(2, jobsData);
   return (
-    <div className={classes.totalFrame}>
-      {!isDetailLoading && (
-        <section className={classes.companyTitle}>
-          <img className={classes.companyLogo} src={`${detailData.logo}`} />
-          <h1 className={classes.companyName}>{detailData.name}</h1>
-        </section>
-      )}
-      {!isJobsLoading && (
-        <section>
-          <CompanyJobs value={jobsData} />
-        </section>
-      )}
-      <section>
-        <h3>기업 소개</h3>
-
-        {!isServiceLoading && (
-          <article>
-            <h4>주요 서비스</h4>
-            {serviceData.map((item, idx) => {
-              return <CompanyService key={idx} value={item} />;
-            })}
-          </article>
+    <main className={classes.main}>
+      <div className={classes.totalFrame}>
+        {!isDetailLoading && (
+          <section className={classes.companyTitle}>
+            <img className={classes.companyLogo} src={`${detailData.logo}`} />
+            <h1 className={classes.companyName}>{detailData.name}</h1>
+          </section>
         )}
-      </section>
-      {!isJobsLoading && <CompanyDetail value={jobsData} />}
-    </div>
+        {!isJobsLoading && (
+          <section>
+            <CompanyJobs value={jobsData} />
+          </section>
+        )}
+        <section>
+          <h3>기업 소개</h3>
+          {!isServiceLoading && (
+            <article>
+              <h4>주요 서비스</h4>
+              {serviceData.map((item, idx) => {
+                return <CompanyService key={idx} value={item} />;
+              })}
+            </article>
+          )}
+        </section>
+        {!isJobsLoading && <CompanyDetail value={jobsData} />}
+      </div>
+      <SideBar value={detailData} />
+    </main>
   );
 };
 export default IntroductionPage;
