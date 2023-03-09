@@ -19,11 +19,11 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  border-bottom: 1px solid rgb(228, 228, 228);
 }
 .companyName {
   padding-left: 1rem;
   /* margin-bottom: 0rem; */
-
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 }

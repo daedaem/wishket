@@ -85,17 +85,17 @@ const IntroductionPage = () => {
           </section>
         )}
         <section>
-          <h3>기업 소개</h3>
+          <h3>회사 소개</h3>
+          {!isJobsLoading && <CompanyDetail value={jobsData} />}
           {!isServiceLoading && (
             <article>
-              <h4>주요 서비스</h4>
+              <h3>주요 서비스</h3>
               {serviceData.map((item, idx) => {
                 return <CompanyService key={idx} value={item} />;
               })}
             </article>
           )}
         </section>
-        {!isJobsLoading && <CompanyDetail value={jobsData} />}
       </div>
       <SideBar value={detailData} />
     </main>
