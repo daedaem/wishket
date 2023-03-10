@@ -1,8 +1,6 @@
 .main {
   display: flex;
-  margin-top: 7rem;
   /* position: relative; */
-  padding: 0 10% 0 10%;
 }
 .totalFrame {
   margin: auto;

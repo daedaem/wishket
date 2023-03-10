@@ -2,14 +2,14 @@
   display: flex;
   margin-top: 7rem;
   /* position: relative; */
-  padding: 0 10% 0 10%;
+  /* padding: 0 10% 0 10%; */
 }
 .totalFrame {
   margin: auto;
   width: 100%;
   background-color: #fff;
   position: relative;
-  padding: 0 10% 0 0;
+  /* padding: 0 10% 0 0; */
 }
 
 .companyLogo {

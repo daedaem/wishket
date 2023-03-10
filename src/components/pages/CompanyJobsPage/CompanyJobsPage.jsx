@@ -4,7 +4,7 @@ import CompanyDetail from "../../CompanyDetail/CompanyDetail";
 import CompanyJobs from "../../CompanyJobs/CompanyJobs";
 import CompanyService from "../../CompanyService/CompanyService";
 import classes from "./CompanyJobsPage.module.css";
-import SideBar from "../../UI/SideBar/SideBar";
+import SideBar from "../../Layout/SideBar/SideBar";
 
 const CompanyJobsPage = () => {
   const [detailData, setDetailData] = useState([]);

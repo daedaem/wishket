@@ -1,4 +1,4 @@
-import Card from "../UI/Card/Card";
+import Card from "../Layout/Card/Card";
 import classes from "./CompanyJobsList.module.css";
 const CompanyJobsList = (props) => {
   const skills = props.val.stack_details.map((skill, idx) => {

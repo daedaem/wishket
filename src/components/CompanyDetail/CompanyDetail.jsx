@@ -1,4 +1,4 @@
-import Carousel from "../UI/Carousel/Carousel";
+import Carousel from "../Layout/Carousel/Carousel";
 import CompanyDetailStack from "./CompanyDetailStack";
 const CompanyDetail = ({ value }) => {
   const imageList =

@@ -4,7 +4,7 @@ import CompanyDetail from "../../CompanyDetail/CompanyDetail";
 import CompanyJobs from "../../CompanyJobs/CompanyJobs";
 import CompanyService from "../../CompanyService/CompanyService";
 import classes from "./IntroductionPage.module.css";
-import SideBar from "../../UI/SideBar/SideBar";
+import SideBar from "../../Layout/SideBar/SideBar";
 
 const IntroductionPage = () => {
   const [detailData, setDetailData] = useState([]);
@@ -69,7 +69,7 @@ const IntroductionPage = () => {
   // }, {});
 
   return (
-    <main className={classes.main}>
+    <div className={classes.main}>
       <div className={classes.totalFrame}>
         {!isDetailLoading && (
           <section className={classes.companyTitle}>
@@ -96,7 +96,7 @@ const IntroductionPage = () => {
         </section>
       </div>
       <SideBar value={detailData} />
-    </main>
+    </div>
   );
 };
 export default IntroductionPage;
