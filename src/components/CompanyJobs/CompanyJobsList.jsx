@@ -1,7 +1,6 @@
 import Card from "../UI/Card/Card";
 import classes from "./CompanyJobsList.module.css";
 const CompanyJobsList = (props) => {
-  // console.log(props);
   const skills = props.val.stack_details.map((skill, idx) => {
     return skill.is_required ? (
       <div key={idx} className={classes.needSkill}>
@@ -19,8 +18,6 @@ const CompanyJobsList = (props) => {
   let gap = dday.getTime() - date.getTime();
   gap = Math.ceil(gap / (1000 * 60 * 60 * 24));
   gap = gap < 0 ? <p>종료</p> : <p>{gap}</p>;
-
-  // console.log(gap);
 
   return (
     <Card className={classes.jobsList}>

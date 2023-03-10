@@ -14,11 +14,16 @@
   z-index: 10;
 }
 
+.headerUl {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+}
+
 .Logo {
   font-size: 1.5rem;
   color: #fff;
   font-weight: bold;
-  text-decoration-line: none;
   cursor: pointer;
 }
 .link {
@@ -28,8 +33,3 @@
   text-decoration-line: none;
   cursor: pointer;
 }
-/* .link:hover,
-.link:active {
-  background-color: #0e1015;
-  cursor: pointer;
-} */

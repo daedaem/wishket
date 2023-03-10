@@ -1,7 +1,6 @@
 import classes from "./CompanyService.module.css";
 const CompanyService = (props) => {
   const description = props.value.description.split("\\n");
-  console.log(props);
   return (
     <article className={classes.serviceDisc}>
       <h4>

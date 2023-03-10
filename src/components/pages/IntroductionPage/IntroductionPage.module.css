@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  margin-top: 7rem;
+  /* position: relative; */
+  padding: 0 10% 0 10%;
+}
+.totalFrame {
+  margin: auto;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  padding: 0 10% 0 0;
+}
+
+.companyLogo {
+  height: 4rem;
+}
+.companyTitle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+.companyName {
+  padding-left: 1rem;
+  /* margin-bottom: 0rem; */
+  font-size: 3rem;
+  font-weight: bold;
+}

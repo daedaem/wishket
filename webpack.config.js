@@ -16,8 +16,10 @@ module.exports = {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   devServer: {
+    // contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 9000,
+    historyApiFallback: true,
   },
   module: {
     rules: [

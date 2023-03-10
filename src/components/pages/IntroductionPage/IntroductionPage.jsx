@@ -4,7 +4,7 @@ import CompanyDetail from "../../CompanyDetail/CompanyDetail";
 import CompanyJobs from "../../CompanyJobs/CompanyJobs";
 import CompanyService from "../../CompanyService/CompanyService";
 import classes from "./IntroductionPage.module.css";
-import SideBar from "./../../UI/SideBar/SideBar";
+import SideBar from "../../UI/SideBar/SideBar";
 
 const IntroductionPage = () => {
   const [detailData, setDetailData] = useState([]);
@@ -68,8 +68,6 @@ const IntroductionPage = () => {
   //   return item.jobs;
   // }, {});
 
-  // console.log(1, comDetail);
-  // console.log(2, jobsData);
   return (
     <main className={classes.main}>
       <div className={classes.totalFrame}>
