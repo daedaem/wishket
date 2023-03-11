@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "../pages/Home";
 import IntroductionPage from "../pages/IntroductionPage/IntroductionPage";
 import CompanyJobsPage from "../pages/CompanyJobsPage/CompanyJobsPage";
 import RootLayout from "../Layout/Root";
@@ -7,12 +8,23 @@ export const routerObject = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <IntroductionPage /> },
       {
-        path: "/companies/:id/jobs",
+        path: "/",
+        element: <Home />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/companies/:companyId",
+        element: <IntroductionPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        //TODO
+        path: "/companies/:companyId/jobs",
+        // path: "/companies",
         element: <CompanyJobsPage />,
+        errorElement: <ErrorPage />,
       },
     ],
   },

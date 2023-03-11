@@ -1,4 +1,12 @@
+.errorFrame {
+  margin-top: 7rem;
+}
 .errorTitle {
   text-align: center;
   font-family: bold;
+  font-size: 2rem;
+}
+.errorContent {
+  text-align: center;
+  font-size: 1rem;
 }

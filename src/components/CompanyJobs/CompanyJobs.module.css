@@ -1,10 +1,31 @@
-.jobsFrame {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+.jobsHead {
+  display: flex;
+  align-items: center;
+  margin: 0rem 0rem;
+  padding: 3rem 0rem;
+  border-bottom: 1px solid rgb(238, 238, 238);
 }
-.card {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 1.5rem auto;
+.jobsLogo {
+  height: 4rem;
+}
+.jobsContent {
+  /* margin-top: 0rem; */
+  /* margin-bottom: 2rem; */
+}
+.jobsContent > h2,
+.jobsContent > h4 {
+  padding-left: 2rem;
+  margin: 0rem;
+  /* margin-top: 0rem; */
+  /* margin-bottom: 1rem; */
+}
+.jobsContent > h4 {
+  color: #8b8888;
+}
+.skillList {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
 }

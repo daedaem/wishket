@@ -1,34 +1,53 @@
 import classes from "./Header.module.css";
-import { Link } from "react-router-dom";
-const id = 1;
+import { NavLink } from "react-router-dom";
+// const id = 1;
 const Header = (props) => {
   return (
     <header className={classes.header}>
       <nav>
-        <ul className={classes.headerUl}>
+        <ul className={classes.list}>
           <li>
-            <Link to="/" className={classes.Logo}>
+            <NavLink to="/" className={classes.Logo} end>
               wishket
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>
       <nav>
-        <ul className={classes.headerUl}>
+        <ul className={classes.list}>
           <li>
-            <Link to="/" className={classes.link}>
+            <NavLink
+              to="/companies/1"
+              // to={`/companies/${id}`}
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+              end
+            >
               회사 소개
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={`/companies/${id}/jobs`} className={classes.link}>
+            <NavLink
+              //TODO
+              // to={`/companies/${id}/jobs`}
+              to={`/companies/1/jobs`}
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
               채용
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/" className={classes.link}>
+            <NavLink
+              to="/dd"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
               회원가입
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

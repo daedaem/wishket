@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={classes.footerSecondSection}>
-        <h4>CONTACT US</h4>
+        <h5>CONTACT US</h5>
         <p>02-6925-4849(10:00-18:00, 공휴일 제외)</p>
         <p>help@wishket.com</p>
       </div>

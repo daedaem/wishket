@@ -1,0 +1,10 @@
+.jobsFrame {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.card {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1.5rem auto;
+}

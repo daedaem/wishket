@@ -43,12 +43,12 @@ const Carousel = ({ imageList }) => {
         )}
 
         <div className={classes.sliderContainer} ref={slideRef}>
-          {imageList.map((el, idx) => {
+          {imageList?.map((imageUrl, idx) => {
             return (
               <img
                 className={classes.sliderContainer}
                 key={idx}
-                src={`${el.image}`}
+                src={`${imageUrl.image}`}
                 alt=""
               />
             );

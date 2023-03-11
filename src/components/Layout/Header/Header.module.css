@@ -14,23 +14,27 @@
   z-index: 10;
 }
 
-.headerUl {
+.list {
   padding: 0rem;
   list-style: none;
   display: flex;
   text-decoration: none;
 }
-
-.Logo {
-  font-size: 1.5rem;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-.link {
+.list a {
   font-size: 1rem;
   color: #fff;
   margin: 0rem 1rem;
   text-decoration-line: none;
+  cursor: pointer;
+}
+.list a:hover,
+.list a.active {
+  color: #cacaca;
+}
+
+.list .Logo {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
   cursor: pointer;
 }

@@ -1,6 +1,7 @@
+import { useNavigate } from "react-router";
 import classes from "./SideBar.module.css";
 const SideBar = (props) => {
-  console.log(props);
+  const navigate = useNavigate();
   const date = new Date();
   const Dday = new Date(props.value.date_established?.split("-"));
   const establishedDate =
@@ -33,7 +34,7 @@ const SideBar = (props) => {
   );
 
   const navigateHandler = () => {
-    navigate("/1");
+    navigate(`/companies/${props.value.id}`);
   };
   return (
     <aside className={classes.sideBar}>

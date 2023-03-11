@@ -1,0 +1,44 @@
+.jobsList {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.jobsList-dday {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: start;
+  color: #2099bb;
+}
+.date_deadline {
+  font-size: 0.8rem;
+  text-align: start;
+  font-style: italic;
+  color: #616161;
+}
+.skillList {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+  /* margin: 0rem auto; */
+  /* font-size: 0.8rem; */
+}
+.needSkill {
+  background-color: #2099bb;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
+  border: 1px solid rgb(228, 228, 228);
+  /* border: 1px solid rgb(228, 228, 228); */
+
+  border-radius: 5px;
+}
+.skill {
+  background-color: #fff;
+  /* background-color: #a1a6ad; */
+  /* color: #fff; */
+  color: black;
+  padding: 0.5rem 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}

@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
+import { useParams } from "react-router";
 import { AxiosInstance } from "../../../api/axios";
 import CompanyDetail from "../../CompanyDetail/CompanyDetail";
-import CompanyJobs from "../../CompanyJobs/CompanyJobs";
+import CompanyJobs from "../../CompanyJobsCard/CompanyJobsCard";
 import CompanyService from "../../CompanyService/CompanyService";
 import classes from "./IntroductionPage.module.css";
 import SideBar from "../../Layout/SideBar/SideBar";
 
 const IntroductionPage = () => {
+  const params = useParams();
   const [detailData, setDetailData] = useState([]);
   const [detailError, setDetailError] = useState(false);
   const [isDetailLoading, setIsDetailLoading] = useState(false);
@@ -55,46 +57,47 @@ const IntroductionPage = () => {
   }, []);
 
   useEffect(() => {
-    detailFetchData("BCK_1/company-detail/1.0.0/companies/1");
+    detailFetchData(`BCK_1/company-detail/1.0.0/companies/${params.companyId}`);
   }, [detailFetchData]);
   useEffect(() => {
-    jobsFetchData("wishket/company-jobs/1.0.0/companies/1/jobs");
+    jobsFetchData(
+      `wishket/company-jobs/1.0.0/companies/${params.companyId}/jobs`
+    );
   }, [jobsFetchData]);
   useEffect(() => {
-    serviceFetchData("wishket/company-services/1.0.0/companies/1/services");
+    serviceFetchData(
+      `wishket/company-services/1.0.0/companies/${params.companyId}/services`
+    );
   }, [serviceFetchData]);
 
-  // const comDetail = jobsData.reduce((init, item, idx) => {
-  //   return item.jobs;
-  // }, {});
-
+  console.log(serviceData);
   return (
-    <div className={classes.main}>
-      <div className={classes.totalFrame}>
+    <div className={classes.totalFrame}>
+      <section className={classes.detailFrame}>
         {!isDetailLoading && (
-          <section className={classes.companyTitle}>
+          <article className={classes.companyTitle}>
             <img className={classes.companyLogo} src={`${detailData.logo}`} />
             <h1 className={classes.companyName}>{detailData.name}</h1>
-          </section>
+          </article>
         )}
         {!isJobsLoading && (
-          <section>
-            <CompanyJobs value={jobsData} />
-          </section>
+          <article>
+            <CompanyJobs value={jobsData} detailData={detailData} />
+          </article>
         )}
-        <section>
+        <article>
           <h3>회사 소개</h3>
           {!isJobsLoading && <CompanyDetail value={jobsData} />}
           {!isServiceLoading && (
             <article>
-              <h3>주요 서비스</h3>
+              <h4>주요 서비스</h4>
               {serviceData.map((item, idx) => {
                 return <CompanyService key={idx} value={item} />;
               })}
             </article>
           )}
-        </section>
-      </div>
+        </article>
+      </section>
       <SideBar value={detailData} />
     </div>
   );
