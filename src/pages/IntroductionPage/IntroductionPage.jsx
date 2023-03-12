@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router";
-import { AxiosInstance } from "../../../api/axios";
-import CompanyDetail from "../../CompanyDetail/CompanyDetail";
-import CompanyJobs from "../../CompanyJobsCard/CompanyJobsCard";
-import CompanyService from "../../CompanyService/CompanyService";
+import { AxiosInstance } from "../../api/axios";
+import CompanyDetail from "../../components/CompanyDetail/CompanyDetail";
+import CompanyJobs from "../../components/CompanyJobs/CompanyJobs";
+import CompanyService from "../../components/CompanyService/CompanyService";
 import classes from "./IntroductionPage.module.css";
-import SideBar from "../../Layout/SideBar/SideBar";
+import SideBar from "../../components/Layout/SideBar/SideBar";
 
 const IntroductionPage = () => {
   const params = useParams();
@@ -70,7 +70,6 @@ const IntroductionPage = () => {
     );
   }, [serviceFetchData]);
 
-  console.log(serviceData);
   return (
     <div className={classes.totalFrame}>
       <section className={classes.detailFrame}>

@@ -1,4 +1,4 @@
-import Header from "../../Layout/Header/Header";
+import Header from "../../components/Layout/Header/Header";
 import classes from "./Error.module.css";
 const ErrorPage = () => {
   return (

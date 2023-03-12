@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
-import { AxiosInstance } from "../../../api/axios";
+import { AxiosInstance } from "../../api/axios";
 import { useParams } from "react-router";
-import CompanyDetail from "../../CompanyDetail/CompanyDetail";
-import CompanyJobs from "../../CompanyJobs/CompanyJobs";
+import CompanyDetail from "../../components/CompanyDetail/CompanyDetail";
+import CompanyJobs from "../../components/CompanyJobs/CompanyJobs";
 import classes from "./CompanyJobsPage.module.css";
-import SideBar from "../../Layout/SideBar/SideBar";
+import SideBar from "../../components/Layout/SideBar/SideBar";
 
 const CompanyJobsPage = () => {
   const params = useParams();
