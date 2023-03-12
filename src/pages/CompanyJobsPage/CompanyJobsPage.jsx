@@ -32,7 +32,13 @@ const CompanyJobsPage = () => {
     setIsJobsLoading(true);
     try {
       const fetchedData = await AxiosInstance.get(url);
-      setJobsData(() => fetchedData.data.jobs);
+
+      const jobsContent =
+        fetchedData.data.jobs &&
+        fetchedData.data.jobs.find((el) => {
+          return el.id == params.id;
+        });
+      setJobsData(() => jobsContent);
       setIsJobsLoading(false);
     } catch (error) {
       setJobsError(() => error);
@@ -41,14 +47,13 @@ const CompanyJobsPage = () => {
   }, []);
 
   useEffect(() => {
-    detailFetchData(`BCK_1/company-detail/1.0.0/companies/${params.companyId}`);
+    detailFetchData(`BCK_1/company-detail/1.0.0/companies/1`);
   }, [detailFetchData]);
   useEffect(() => {
-    jobsFetchData(
-      `wishket/company-jobs/1.0.0/companies/${params.companyId}/jobs`
-    );
+    jobsFetchData(`wishket/company-jobs/1.0.0/companies/1/jobs`);
   }, [jobsFetchData]);
 
+  console.log(jobsData);
   return (
     <div className={classes.totalFrame}>
       <section className={classes.detailFrame}>

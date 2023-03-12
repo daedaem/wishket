@@ -21,7 +21,7 @@ export const routerObject = createBrowserRouter([
       },
       {
         //TODO
-        path: "/companies/:companyId/jobs",
+        path: "/companies/:companyId/jobs/:id",
         // path: "/companies",
         element: <CompanyJobsPage />,
         errorElement: <ErrorPage />,

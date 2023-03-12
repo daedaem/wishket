@@ -13,10 +13,10 @@ const CompanyJobsCardList = (props) => {
   let gap = dday.getTime() - date.getTime();
   gap = Math.ceil(gap / (1000 * 60 * 60 * 24));
   gap = gap < 0 ? <p>종료</p> : <p>{gap}</p>;
-
+  console.log(props);
   const navigateHandler = () => {
-    // navigate(`/companies/${props.val.id}/jobs`);
-    navigate(`/companies/1/jobs`);
+    navigate(`/companies/${props.val.company}/jobs/${props.val.id}`);
+    // navigate(`/companies/1/jobs`);
   };
   return (
     <Card className={classes.jobsList} onClick={navigateHandler}>

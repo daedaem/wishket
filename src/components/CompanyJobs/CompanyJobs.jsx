@@ -1,43 +1,37 @@
+// import { useParams } from "react-router";
 import classes from "./CompanyJobs.module.css";
 import Carousel from "../Layout/Carousel/Carousel";
 import CompanyDetailStack from "../CompanyDetail/CompanyDetailStack";
 const CompanyJobs = ({ jobsData, detailData }) => {
   //TODO : 여기 아이디가 넘어와야한다
-  const id = 1;
-  const jobsContent =
-    jobsData?.length > 0
-      ? jobsData.find((el) => {
-          return el.id == id;
-        })
-      : "";
-  const stacks = jobsContent.stack_details?.map((el, idx) => {
+  const stacks = jobsData?.stack_details?.map((el, idx) => {
     return <CompanyDetailStack key={idx} val={el} />;
   });
-  const preference = jobsContent.preference?.split("\\n").map((el, idx) => {
+  const preference = jobsData?.preference?.split("\\n").map((el, idx) => {
     return <p key={idx}>{el}</p>;
   });
-  const requirement = jobsContent.requirement?.split("\\n").map((el, idx) => {
+  const requirement = jobsData?.requirement?.split("\\n").map((el, idx) => {
     return <p key={idx}>{el}</p>;
   });
-  const environment = jobsContent.environment?.split("\\n").map((el, idx) => {
+  const environment = jobsData?.environment?.split("\\n").map((el, idx) => {
     return <p key={idx}>{el}</p>;
   });
-  const responsibility = jobsContent.responsibility
+  const responsibility = jobsData?.responsibility
     ?.split("\\n")
     .map((el, idx) => {
       return <p key={idx}>{el}</p>;
     });
-  const welfare = jobsContent.welfare?.split("\\n").map((el, idx) => {
+  const welfare = jobsData?.welfare?.split("\\n").map((el, idx) => {
     return <p key={idx}>{el}</p>;
   });
-  const imageList = jobsContent.job_images;
+  const imageList = jobsData?.job_images;
   return (
     <>
       <article className={classes.jobsHead}>
         <img className={classes.jobsLogo} src={`${detailData.logo}`} />
         <div className={classes.jobsContent}>
           <h2>
-            {jobsContent.level} {jobsContent.role}
+            {jobsData?.level} {jobsData?.role}
           </h2>
           <h4>{detailData.name}</h4>
         </div>

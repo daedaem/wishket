@@ -31,7 +31,7 @@ const Header = (props) => {
             <NavLink
               //TODO
               // to={`/companies/${id}/jobs`}
-              to={`/companies/1/jobs`}
+              to={`/companies/1/jobs/1`}
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
