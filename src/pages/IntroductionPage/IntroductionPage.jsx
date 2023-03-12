@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router";
 import { AxiosInstance } from "../../api/axios";
 import CompanyDetail from "../../components/CompanyDetail/CompanyDetail";
-import CompanyJobs from "../../components/CompanyJobs/CompanyJobs";
+import CompanyJobsCard from "../../components/CompanyJobsCard/CompanyJobsCard";
 import CompanyService from "../../components/CompanyService/CompanyService";
 import classes from "./IntroductionPage.module.css";
 import SideBar from "../../components/Layout/SideBar/SideBar";
@@ -81,7 +81,7 @@ const IntroductionPage = () => {
         )}
         {!isJobsLoading && (
           <article>
-            <CompanyJobs value={jobsData} detailData={detailData} />
+            <CompanyJobsCard value={jobsData} detailData={detailData} />
           </article>
         )}
         <article>

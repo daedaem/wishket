@@ -5,7 +5,7 @@ const CompanyJobs = ({ jobsData, detailData }) => {
   //TODO : 여기 아이디가 넘어와야한다
   const id = 1;
   const jobsContent =
-    jobsData.length > 0
+    jobsData?.length > 0
       ? jobsData.find((el) => {
           return el.id == id;
         })
